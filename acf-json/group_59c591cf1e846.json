@@ -1,0 +1,163 @@
+{
+    "key": "group_59c591cf1e846",
+    "title": "Post fields",
+    "fields": [
+        {
+            "key": "field_520f64681854f",
+            "label": "Map",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_51f45e8f30bfd",
+            "label": "Add to map?",
+            "name": "add_to_map",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_51f45eb730bfe",
+            "label": "Add location",
+            "name": "add_location",
+            "type": "location-field",
+            "instructions": "Add this article to the map.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_51f45e8f30bfd",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "val": "address",
+            "center": "48.856614,2.3522219000000177",
+            "zoom": 16,
+            "scrollwheel": 1
+        },
+        {
+            "key": "field_520f647c18550",
+            "label": "Related information",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_520f68de5826a",
+            "label": "Pick artist",
+            "name": "artist_post",
+            "type": "relationship",
+            "instructions": "Choose the artist to display artist information. When the artist doesn't exist in the database yet, please add it <a href=\"http:\/\/loc.cfye.com\/wp-admin\/edit.php?post_type=artists\" target=\"_blank\" >via this link<\/a>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "object",
+            "post_type": [
+                "artists"
+            ],
+            "taxonomy": [],
+            "filters": [
+                "search"
+            ],
+            "max": "",
+            "min": 0,
+            "elements": [
+                "featured_image",
+                "post_type"
+            ]
+        },
+        {
+            "key": "field_5276c38539a5c",
+            "label": "Related article",
+            "name": "related_article",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "object",
+            "post_type": [
+                "post"
+            ],
+            "taxonomy": [],
+            "filters": [
+                "search"
+            ],
+            "max": 1,
+            "min": 0,
+            "elements": [
+                "featured_image",
+                "post_type"
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "discussion",
+        "comments",
+        "send-trackbacks"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_graphql": 1,
+    "graphql_field_name": "postSettingsField",
+    "modified": 1603656591
+}
