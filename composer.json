@@ -1,5 +1,5 @@
 {
-  "name": "aderaaij/wp-headless-theme",
+  "name": "aderaaij/cfye-wp-headless-theme",
   "type": "wordpress-theme",
   "license": "MIT",
   "description": "WordPress starter theme with a modern development workflow",
@@ -15,7 +15,7 @@
     "wordpress"
   ],
   "support": {
-    "issues": "https://github.com/aderaaij/wp-headless-theme/issues"
+    "issues": "https://github.com/aderaaij/cfye-wp-headless-theme/issues"
   },
   "autoload": {
     "psr-4": {
