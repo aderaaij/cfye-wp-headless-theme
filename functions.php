@@ -34,3 +34,12 @@
     }
     return $query_args;
   }, 10, 5 );
+
+
+  add_filter( 'graphql_connection_max_query_amount', function( $amount, $source, $args, $context, $info  ) {
+    if ( current_user_can( 'manage_options' ) ) {
+         $amount = 1000;
+    }
+    return $amount;
+}, 10, 5 );
+  
