@@ -18,7 +18,10 @@
   }
   add_filter('the_content', 'remove_p_from_images');
 
-    
+  // =========================================================================
+  // WPGraphQL - Register Sticky posts to GraphQL
+  // https://www.wpgraphql.com/2018/11/16/querying-sticky-posts-with-graphql/
+  // =========================================================================  
   add_action( 'graphql_register_types', function() {
     register_graphql_field( 'RootQueryToPostConnectionWhereArgs', 'onlySticky', [
       'type' => 'Boolean',
@@ -31,11 +34,16 @@
       $sticky_ids = get_option( 'sticky_posts' );
       $query_args['posts_per_page'] = count( $sticky_ids );
       $query_args['post__in'] = $sticky_ids;
+    } elseif ( isset( $args['where']['onlySticky'] ) && false === $args['where']['onlySticky']) {
+      $sticky_ids = get_option( 'sticky_posts' ); 
+      $query_args['post__not_in'] = $sticky_ids;
     }
     return $query_args;
   }, 10, 5 );
 
-
+  // =========================================================================
+  // WPGraphQL - change max query limits
+  // =========================================================================  
   add_filter( 'graphql_connection_max_query_amount', function( $amount, $source, $args, $context, $info  ) {
     if ( current_user_can( 'manage_options' ) ) {
          $amount = 1000;
